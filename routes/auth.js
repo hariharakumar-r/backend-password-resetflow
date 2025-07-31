@@ -9,6 +9,12 @@ const limiter = rateLimit({
   message: "Too many requests, please try again later.",
 });
 
+const auth = require("../middleware/auth");
+
+router.get("/protected", auth, (req, res) => {
+  res.json({ message: "You are authenticated", user: req.user });
+});
+
 router.post("/register", authController.register);
 router.post("/login", authController.login);
 router.post("/forgot-password", limiter, authController.forgotPassword);
