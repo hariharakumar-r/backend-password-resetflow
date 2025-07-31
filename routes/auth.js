@@ -9,9 +9,9 @@ const limiter = rateLimit({
   message: "Too many requests, please try again later.",
 });
 
-router.post("register", authController.register);
-router.post("login", authController.login);
-router.post("forgot-password", limiter, authController.forgotPassword);
-router.post("reset-password/:token", limiter, authController.resetPassword);
+router.post("/register", authController.register);
+router.post("/login", authController.login);
+router.post("/forgot-password", limiter, authController.forgotPassword);
+router.post("/reset-password/:token", limiter, authController.resetPassword);
 
 module.exports = router;
