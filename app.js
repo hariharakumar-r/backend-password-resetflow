@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://passwordresetflowapp.netlify.app",
+  "https://haris-password-resert-flow.netlify.app",
 ];
 
 app.use(
