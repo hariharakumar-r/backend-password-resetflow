@@ -9,9 +9,22 @@ const nodemailer = require("nodemailer");
 const app = express();
 app.use(bodyParser.json());
 
+
+// app.post("/login", (req, res) => {
+//   // ...authenticate user...
+//   // If successful:
+//   res.cookie("token", jwtToken, {
+//     httpOnly: true,
+//     secure: true, // use true in production
+//     sameSite: "lax",
+//     maxAge: 24 * 60 * 60 * 1000,
+//   });
+//   res.json({ message: "Login successful" });
+// });
+
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://haris-password-resert-flow.netlify.app"
+  "https://hariharakumar-password-reset.netlify.app"
 ];
 
 app.use(
