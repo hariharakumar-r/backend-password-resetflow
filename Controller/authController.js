@@ -40,6 +40,15 @@ const authController = {
                 password: hashedPassword,
             });
             await newUser.save();
+
+            // Auto-login: Create token and set cookie
+            const token = jwt.sign({ id: newUser._id }, process.env.SECRET_KEY);
+            response.cookie('token', token, {
+                httpOnly: true,
+                secure: true,
+                sameSite: 'none',
+            });
+
             return response.status(201).json({ message: "User Created Successfully" });
         }
         catch (error) {
@@ -166,9 +175,6 @@ const authController = {
           res.status(500).json({ error: error.message });
         }
       }
-      
-    
-    
 }
 
 
