@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://hariharakumar-password-reset.netlify.app"],
+    origin: ["http://localhost:5173", "http://hariharakumar-password-reset.netlify.app",'https://frontend-password-resetflow.vercel.app'],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // Add this line
